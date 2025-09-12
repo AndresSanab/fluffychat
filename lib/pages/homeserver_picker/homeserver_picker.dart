@@ -39,6 +39,22 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   String? error;
 
+  final Map<String, String> homeserverOptions = {
+    'Matrix': 'matrix.org',
+    'Nexxo': 'nexxo.chat',
+  };
+
+  String selectedHomeserver = 'Matrix';
+
+  void onHomeserverChanged(String? newValue) {
+    if (newValue != null) {
+      setState(() {
+        selectedHomeserver = newValue;
+        error = null;
+      });
+    }
+  }
+
   bool isTorBrowser = false;
 
   Future<void> _checkTorBrowser() async {
@@ -53,8 +69,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
   /// well-known information and forwards to the login page depending on the
   /// login type.
   Future<void> checkHomeserverAction({bool legacyPasswordLogin = false}) async {
-    final homeserverInput =
-        homeserverController.text.trim().toLowerCase().replaceAll(' ', '-');
+    final homeserverInput = homeserverOptions[selectedHomeserver]!;
 
     if (homeserverInput.isEmpty) {
       final client = await Matrix.of(context).getLoginClient();
