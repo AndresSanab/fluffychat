@@ -2,6 +2,9 @@
 
 ## 🚀 Ejecución Rápida
 
+sudo fuser -k 8080/tcp
+flutter run -d chrome --web-port 8080
+
 ### Modo Desarrollo (Recomendado para desarrollo)
 Con hot reload automático - los cambios se aplican al instante:
 

@@ -115,9 +115,9 @@ flutter:
     - assets/vodozemac/
 
 msix_config:
-  display_name: FluffyChat
-  publisher_display_name: FluffyChat
-  publisher: CN=FluffyChat, O=Head of bad integration tests, L=Matrix, S=Internet, C=EU
+  display_name: Nexxo
+  publisher_display_name: Nexxo
+  publisher: CN=Nexxo, O=Head of bad integration tests, L=Matrix, S=Internet, C=EU
   identity_name: chat.fluffy.fluffychat
   logo_path: assets\logo.png
   capabilities: internetClient, location, microphone, webcam
